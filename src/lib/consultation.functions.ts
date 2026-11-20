@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { consultationSchema } from "./consultation-schema";
 
 export const submitConsultation = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => consultationSchema.parse(data))
+  .validator((data: unknown) => consultationSchema.parse(data))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin.from("consultation_requests").insert({

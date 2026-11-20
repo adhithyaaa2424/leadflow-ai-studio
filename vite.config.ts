@@ -15,4 +15,27 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle the site's client libraries up front so Vite never re-optimizes mid-session,
+    // which can leave an open preview mixing two React copies ("reading 'useState'" of null).
+    optimizeDeps: {
+      include: [
+        "@hookform/resolvers/zod",
+        "@radix-ui/react-accordion",
+        "@radix-ui/react-slider",
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "react-hook-form",
+        "sonner",
+        "tailwind-merge",
+        "zod",
+        "@tanstack/router-core",
+        "@tanstack/router-core/isServer",
+        "@tanstack/router-core/ssr/client",
+        "seroval",
+      ],
+    },
+  },
 });
