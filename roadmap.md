@@ -12,3 +12,5 @@
 - [x] Consultation form saved to Lovable Cloud, with validation + toasts
 - [x] FAQ accordion + footer
 - [x] Page metadata, verification, commit
+- [x] Forward saved bookings to Make.com webhook (server-side, after insert)
+- [ ] Make.com: user adds MAKE_WEBHOOK_URL secret, then test a live booking
