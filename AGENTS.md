@@ -28,3 +28,19 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The site is a single scrolling page (`src/routes/index.tsx`) composed of section components in `src/components/site/`; nav links target section ids. Why: the brief asks for smooth-scroll navigation with active-section highlighting.
+- Site copy lists (nav, services, steps, metrics, FAQs) live in `src/lib/site-content.ts`. Why: one place to edit content without touching layout.
+- Consultation requests are validated by the shared zod schema in `src/lib/consultation-schema.ts` and inserted server-side via `submitConsultation` into `consultation_requests` (RLS on, no public policies). Why: visitors can never read or write submissions directly.
+- The savings calculator math lives in `src/lib/roi.ts` with tests beside it. Why: keeps the formula testable apart from the UI.
+- The theme is dark-only; brand colors are tokens in `src/styles.css`. Why: the brand identity is a dark design.
+
+## Project rules
+
+- The site is a single scrolling page (`src/routes/index.tsx`) composed of section components in `src/components/site/`; nav links target section ids. Why: the brief asks for smooth-scroll navigation with active-section highlighting.
+- Site copy lists (nav, services, steps, metrics, FAQs) live in `src/lib/site-content.ts`. Why: one place to edit content without touching layout.
+- Consultation requests are validated by the shared zod schema in `src/lib/consultation-schema.ts` and inserted server-side via `submitConsultation` into `consultation_requests` (RLS on, no public policies). Why: visitors can never read or write submissions directly.
+- The savings calculator math lives in `src/lib/roi.ts` with tests beside it. Why: keeps the formula testable apart from the UI.
+- The theme is dark-only; brand colors are tokens in `src/styles.css`. Why: the brand identity is a dark design.
