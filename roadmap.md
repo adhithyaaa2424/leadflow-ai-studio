@@ -13,4 +13,5 @@
 - [x] FAQ accordion + footer
 - [x] Page metadata, verification, commit
 - [x] Forward saved bookings to Make.com webhook (server-side, after insert)
-- [ ] Make.com: user adds MAKE_WEBHOOK_URL secret, then test a live booking
+- [x] MAKE_WEBHOOK_URL secret saved
+- [ ] Make.com: user turns on the scenario (webhook returned "no scenario listening"), then retest a live booking
